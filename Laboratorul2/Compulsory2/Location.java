@@ -1,8 +1,8 @@
 public class Location {
-    private final String name;
-    private final int x;
-    private final int y;
-    private final LocationType type;
+    private String name;
+    private int x;
+    private int y;
+    private LocationType type;
     Location(int x,int y,LocationType type, String name){
         this.x=x;
         this.y=y;
