@@ -1,7 +1,7 @@
 public class Road {
-    private final int length;
-    private final int speedLimit;
-    private final RoadType type;
+    private int length;
+    private int speedLimit;
+    private RoadType type;
     Road(int length, int speedLimit,RoadType type){
         this.length=length;
         this.speedLimit=speedLimit;
