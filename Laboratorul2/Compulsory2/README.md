@@ -8,7 +8,7 @@ We consider the problem of determining the "best" route from one location to ano
 
 The main specifications of the application are:
 
-*- [X] Create an object-oriented model of the problem. You should have (at least) the following classes: Location, Road.
+* [X] Create an object-oriented model of the problem. You should have (at least) the following classes: Location, Road.
 The location and road types will be implemented as enums.
 - [x] Each class should have appropriate constructors, getters and setters.
 Use the IDE features for code generation, such as generating getters and setters.
