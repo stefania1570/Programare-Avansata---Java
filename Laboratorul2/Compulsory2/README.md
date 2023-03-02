@@ -8,10 +8,10 @@ We consider the problem of determining the "best" route from one location to ano
 
 The main specifications of the application are:
 
-:heavy_check_mark: Create an object-oriented model of the problem. You should have (at least) the following classes: Location, Road.
-The location and road types will be implemented as enums.
-:heavy_check_mark: Each class should have appropriate constructors, getters and setters.
-Use the IDE features for code generation, such as generating getters and setters.
-:heavy_check_mark: The toString method form the Object class must be properly overridden for all the classes.
-Use the IDE features for code generation, for example (in NetBeans) press Alt+Ins or invoke the context menu, select "Insert Code" and then "toString()" (or simply start typing "toString" and then press Ctrl+Space).
-:heavy_check_mark: Create and print on the screen various objects of the two classes.
+:white_check_mark: Create an object-oriented model of the problem. You should have (at least) the following classes: Location, Road.
+The location and road types will be implemented as enums.  
+:white_check_mark: Each class should have appropriate constructors, getters and setters.
+Use the IDE features for code generation, such as generating getters and setters.  
+:white_check_mark: The toString method form the Object class must be properly overridden for all the classes.
+Use the IDE features for code generation, for example (in NetBeans) press Alt+Ins or invoke the context menu, select "Insert Code" and then "toString()" (or simply start typing "toString" and then press Ctrl+Space).  
+:white_check_mark: Create and print on the screen various objects of the two classes.
