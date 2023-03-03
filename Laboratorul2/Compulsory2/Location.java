@@ -24,6 +24,7 @@ public class Location {
     public LocationType getType() {
         return type;
     }
+    @Override //!!
     public String toString(){
         return ("Nume locatie: " + this.getName() + "\n" +
                 "Coordonata x: " + this.getX() +"\n"+
