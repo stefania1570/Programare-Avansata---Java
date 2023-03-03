@@ -19,6 +19,7 @@ public class Road {
     public RoadType getType() {
         return type;
     }
+    @Override //!!!
     public String toString(){
         return ("Lungime drum: " + this.getLength() + "\n" +
                 "Limita de viteza: " + this.getSpeedLimit() + "\n"+
