@@ -1,4 +1,4 @@
-### Compulsory2
+## Compulsory2
 An instance of the "Best Route Problem" consists of locations and roads. Locations may be cities, airports, gas stations, etc.
 Two locations may be connected by a road, or not. Roads may be highways, express, country, etc.
 
