@@ -7,12 +7,18 @@ class MainFrame extends JFrame {
     ControlPanel controlPanel;
     DrawingPanel drawingPanel;
     ConfigPanel configPanel;
-    private int  numberOfDots;
+
+    /**
+     * Constructor for initializing the main frame once it is created
+     */
     public MainFrame() {
         super("Joc Laboratorul 6");
         init();
     }
 
+    /**
+     * Method used for initialization
+     */
     private void init() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
