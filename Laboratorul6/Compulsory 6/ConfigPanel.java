@@ -12,11 +12,20 @@ class ConfigPanel extends JPanel {
     private JTextField linesField;
     private JButton newGameButton;
 
+    /**
+     * Constructor for the configuration panel
+     * @param frame MainFrame
+     */
     public ConfigPanel(MainFrame frame) {
         this.frame = frame;
         init();
     }
 
+    /**
+     * Initializes the configuration panel
+     * Sets the default number of vertices (dots) as 7 and the default number of edges (lines) for a complete graph
+     * If the new game button is pressed, a new game starts with the given configuration 
+     */
     private void init() {
         setLayout(new FlowLayout());
         dotsLabel = new JLabel("Number of dots:");
@@ -37,9 +46,18 @@ class ConfigPanel extends JPanel {
         newGameButton.addActionListener(this::createNewGame);
     }
 
+    /**
+     * Method that computes the number of vertices (dots)
+     * @return
+     */
     public int getNumberOfDots() {
         return Integer.parseInt(dotsField.getText());
     }
+
+    /**
+     * Action handler for creating a new game after the "new game" button is pressed
+     * @param e
+     */
     private void createNewGame(ActionEvent e){
         int numLines = this.getNumberOfDots() * (this.getNumberOfDots() - 1) / 2;
         String str = "";
