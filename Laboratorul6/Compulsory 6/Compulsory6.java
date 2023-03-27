@@ -1,6 +1,6 @@
 package graphicsLAB6;
 
-public class Main {
+public class Compulsory6 {
 
     public static void main(String[] args) {
         new MainFrame().setVisible(true);
