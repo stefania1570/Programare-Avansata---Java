@@ -10,11 +10,18 @@ public class ControlPanel extends JPanel {
     JButton saveButton = new JButton("Save");
     JButton exitButton = new JButton("Exit");
 
+    /**
+     * Constructor for building the control panel
+     * @param frame MainFrame
+     */
     public ControlPanel(MainFrame frame) {
         this.frame = frame;
         init();
     }
 
+    /**
+     * Building the control panel
+     */
     private void init() {
         setLayout(new GridLayout(1, 3));
         add(loadButton);
@@ -23,17 +30,12 @@ public class ControlPanel extends JPanel {
         exitButton.addActionListener(this::exitGame);
         //TODO action listener pt restul butoanelor
     }
+    
+     /**
+     * Action handler for the exit button
+     * @param e ActionEvent
+     */
     private void exitGame(ActionEvent e) {
         frame.dispose();
     }
-
-//    public void save() throws IOException {
-//        ImageIO.write(ceva rendered Image ?, "PNG", new File("lab6.png"));
-//    }
-
-//    public void load() throws IOException {
-//        drawArea.setImage(ImageIO.read(new File("lab6.png")));
-//        repaint();
-//    }
-
 }
