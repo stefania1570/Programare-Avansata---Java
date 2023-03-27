@@ -11,16 +11,29 @@ public class DrawingPanel extends JPanel {
     private int[] x, y;
     BufferedImage image; //the offscreen image
     Graphics2D graphics; //the tools needed to draw in the image
+
+    /**
+     * Constructor for the drawing frame
+     * @param frame MainFrame
+     */
     public DrawingPanel(MainFrame frame) {
         this.frame = frame;
         createOffscreenImage();
         initPanel();
         createBoard();
     }
+
+    /**
+     * Initializer for the drawing panel
+     */
     private void initPanel() {
         setPreferredSize(new Dimension(W, H));
         setBorder(BorderFactory.createEtchedBorder());
     }
+
+    /**
+     * Creates off screen image
+     */
     private void createOffscreenImage() {
         image = new BufferedImage(W, H, BufferedImage.TYPE_INT_ARGB);
         graphics = image.createGraphics();
@@ -28,6 +41,10 @@ public class DrawingPanel extends JPanel {
         graphics.setColor(Color.WHITE);
         graphics.fillRect(0, 0, 800, 600);
     }
+
+    /**
+     * Creates the board
+     */
     final void createBoard() {
         //edgeProbability = (Double) frame.configPanel.linesCombo.getSelectedItem();
         createOffscreenImage();
@@ -37,6 +54,10 @@ public class DrawingPanel extends JPanel {
     @Override
     public void update(Graphics g) { } //No need for update
 
+    /**
+     * Draws the complete graph given by the parameters from the configuration panel
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
