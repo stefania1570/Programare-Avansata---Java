@@ -51,7 +51,13 @@ class ConfigPanel extends JPanel {
      * @return
      */
     public int getNumberOfDots() {
-        return Integer.parseInt(dotsField.getText());
+         int numberOfDots = 7; //DEFAULT
+        try {
+              numberOfDots = Integer.parseInt(dotsField.getText());
+        } catch (NumberFormatException e) {
+              System.out.println("Invalid input for number of dots.");
+        }
+         return numberOfDots;
     }
 
     /**
