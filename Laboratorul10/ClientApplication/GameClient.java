@@ -15,7 +15,7 @@ public class GameClient {
         BufferedReader userInput = new BufferedReader(new InputStreamReader(System.in));
 
         String userInputLine;
-        System.out.println("Introduceti comanda:");
+        System.out.println("Introduce the command:");
         while ((userInputLine = userInput.readLine()) != null) {
 
             if (userInputLine.equals("exit")) {
@@ -27,15 +27,24 @@ public class GameClient {
             } else if (userInputLine.startsWith("join")) {
                 out.println(userInputLine);
                 System.out.println(in.readLine());
-            } else {
+            } else if (userInputLine.startsWith("submit")) {
+                out.println(userInputLine);
+                System.out.println(in.readLine());
+            }
+//            else if (userInputLine.equals("show")) {
+//                out.println(userInputLine);
+//                System.out.println(in.readLine());
+//            }
+            else {
                 out.println(userInputLine);
                 String response = in.readLine();
-                System.out.println("Server response: " + response);
                 if (response.equals("Server stopped")) {
                     break;
-                }
+                } else if (response.equals("Game started.")) {
+
+                }else System.out.println("Server: " + response);
             }
-            System.out.println("Introduceti comanda:");
+            System.out.println("Introduce the command:");
         }
 
         out.close();
