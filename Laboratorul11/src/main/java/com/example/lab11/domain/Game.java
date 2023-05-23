@@ -4,19 +4,18 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 
 @Entity
-public class Player {
+public class Game {
     @Id
     private Long id;
     private String name;
-    private int score;
-    public Player(){
+
+    public Game() {
 
     }
 
-    public Player(Long id, String name, int score) {
+    public Game(Long id, String name) {
         this.id = id;
         this.name = name;
-        this.score = score;
     }
 
     public Long getId() {
@@ -33,13 +32,5 @@ public class Player {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getScore() {
-        return score;
-    }
-
-    public void setScore(int score) {
-        this.score = score;
     }
 }

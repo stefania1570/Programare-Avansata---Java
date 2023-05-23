@@ -1,9 +1,12 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         System.out.println("Cycle Graph: *********************************************************/n");
-        int n = 5; // number of vertices
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter the number of vertices:");
+        int n = in.nextInt();
         int[][] adjMatrix = new int[n][n]; // initialize adjacency matrix
 
         // create cycle graph adjacency matrix
@@ -32,7 +35,7 @@ public class Main {
                 System.out.println(Arrays.toString(row));
             }
         }
-        System.out.println("Regular Graph: *********************************************************/n");
+        System.out.println("Regular Graph: *********************************************************\n");
         int degree = 2; // vertex degree
         int[][] adjMatrix2 = new int[n][n]; // initialize adjacency matrix2
 
