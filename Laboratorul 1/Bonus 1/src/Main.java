@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Cycle Graph: *********************************************************/n");
+        System.out.println("Cycle Graph: *********************************************************");
         Scanner in = new Scanner(System.in);
         System.out.println("Enter the number of vertices:");
         int n = in.nextInt();
@@ -35,19 +35,34 @@ public class Main {
                 System.out.println(Arrays.toString(row));
             }
         }
-        System.out.println("Regular Graph: *********************************************************\n");
-        int degree = 2; // vertex degree
+        System.out.println("Regular Graph: *********************************************************");
+        System.out.println("Enter the vertex degree:");
+        int degree = in.nextInt();; // vertex degree - 2
         int[][] adjMatrix2 = new int[n][n]; // initialize adjacency matrix2
 
-        // create regular graph adjacency matrix
+        if (n * degree % 2 != 0) {
+            System.err.println("Invalid combination of vertices and vertex degree.");
+        }
+
+        int[] vertices = new int[n];
+
         for (int i = 0; i < n; i++) {
-            for (int j = i+1; j < n && adjMatrix2[i][j] < degree; j++) {
-                adjMatrix2[i][j] = 1;
-                adjMatrix2[j][i] = 1;
+            vertices[i] = i;
+        }
+
+        // Connect the vertices to form a regular graph
+        for (int i = 0; i < n; i++) {
+            for (int j = 1; j <= degree / 2; j++) {
+                int v1 = vertices[i];
+                int v2 = vertices[(i + j) % n];
+
+                adjMatrix2[v1][v2] = 1;
+                adjMatrix2[v2][v1] = 1;
             }
         }
 
-        // print adjacency matrix
+
+
         System.out.println("Adjacency matrix:");
         for (int[] row : adjMatrix2) {
             System.out.println(Arrays.toString(row));

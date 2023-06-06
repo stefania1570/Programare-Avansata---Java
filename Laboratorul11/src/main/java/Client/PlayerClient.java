@@ -9,7 +9,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
 
-//@SpringBootApplication
+
 public class PlayerClient {
     static RestTemplate restTemplate = new RestTemplate();
     public static void GetPlayersRequest() {
