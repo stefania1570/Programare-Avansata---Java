@@ -12,7 +12,6 @@ import java.net.Socket;
  * that will handle the communication
  */
 
-//@SpringBootApplication
 public class ServerApplication {
 	private static final int PORT = 6666;
 
