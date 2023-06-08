@@ -79,18 +79,15 @@ public class Network {
 
         // Go through all vertices adjacent to this
         for (Integer v : adj.get(u)) {
-            // If v is not visited yet, then make it a child of u
-            // in DFS tree and recur for it
+            // If v is not visited yet, then make it a child of u in DFS tree
             if (!visited[v]) {
                 children++;
                 APUtil( v, visited, disc, low, u, isAP);
 
-                // Check if the subtree rooted with v has
-                // a connection to one of the ancestors of u
+                // Check if the subtree rooted with v has a connection to one of the ancestors of u
                 low[u] = Math.min(low[u], low[v]);
 
-                // If u is not root and low value of one of
-                // its child is more than discovery value of u.
+                // If u is not root and low value of one of its child is more than discovery value of u.
                 if (parent != -1 && low[v] >= disc[u])
                     isAP[u] = true;
             }
@@ -113,9 +110,7 @@ public class Network {
         boolean[] isAP = new boolean[numberOfVertices];
         int time = 0, par = -1;
 
-        // Adding this loop so that the
-        // code works even if we are given
-        // disconnected graph
+        // Adding this loop so that the code works even if we are given a disconnected graph
         for (int u = 0; u < numberOfVertices; u++)
             if (!visited[u])
                 APUtil( u, visited, disc, low, par, isAP);

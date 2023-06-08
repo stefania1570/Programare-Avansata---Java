@@ -24,24 +24,24 @@ public class Homework2 {
         Location g2 = new gasStation(-18,10,"Rompetrol",6.4);g2.setIndex(numberOfLocations);locations[numberOfLocations++]=g2;
         Location g3 = new gasStation(10,17,"BenGas",8.3);g3.setIndex(numberOfLocations);locations[numberOfLocations++]=g3;
 
-//        //Generating random instances of locations
-//        for (int i = 0; i < maxLocations; i++) {
-//            String name = getRandomName();
-//            int x = random.nextInt(MAX_COORDINATE);
-//            int y = random.nextInt(MAX_COORDINATE);
-//            Location location = null;
-//            if (random.nextBoolean()){
-//               location = new City(x,y,name,12345);
-//            } else if (random.nextBoolean()){
-//                name = "Airport "+name;
-//                location = new Airport(x,y,name,45);
-//            } else {
-//                name = "Gas Station "+name;
-//                location = new gasStation(x,y,name,45);
-//            }
-//            location.setIndex(numberOfLocations);
-//            locations[numberOfLocations++] = location;
-//        }
+        //Generating random instances of locations
+        for (int i = 0; i < maxLocations; i++) {
+            String name = getRandomName();
+            int x = random.nextInt(MAX_COORDINATE);
+            int y = random.nextInt(MAX_COORDINATE);
+            Location location = null;
+            if (random.nextBoolean()){
+               location = new City(x,y,name,12345);
+            } else if (random.nextBoolean()){
+                name = "Airport "+name;
+                location = new Airport(x,y,name,45);
+            } else {
+                name = "Gas Station "+name;
+                location = new gasStation(x,y,name,45);
+            }
+            location.setIndex(numberOfLocations);
+            locations[numberOfLocations++] = location;
+        }
 
         Road[] roads = new Road[200];
         int numberOfRoads=0;
@@ -57,35 +57,35 @@ public class Homework2 {
         Road co3= new Country(g3,c1,90,false,"co3");roads[numberOfRoads++]=co3;
         Road co4= new Country(g1,g3,60,false,"co4");roads[numberOfRoads++]=co4;
 
-//        for (int i = 0; i < maxRoads; i++) {
-//            String name = getRandomName();
-//            Location source = locations[random.nextInt(numberOfLocations)];
-//            Location destination = locations[random.nextInt(numberOfLocations)];
-//            while(source.getName().equals(destination.getName())){
-//                //source must be different from the destination
-//                destination = locations[random.nextInt(numberOfLocations)];
-//                if(!source.getName().equals(destination.getName())){
-//                    break;
-//                }
-//            }
-//            int speedLimit = 1;
-//            Random random2 = new Random();
-//            Road road;
-//            if (random.nextBoolean()){
-//                speedLimit = 1+ random2.nextInt(89);
-//                road = new Country(source,destination,speedLimit,random.nextBoolean(),name);
-//                road.setLength(1+random.nextDouble(200));
-//            } else if (random.nextBoolean()){
-//                speedLimit = 91+random2.nextInt(29);
-//                road = new Express(source,destination,speedLimit,random.nextBoolean(),name);
-//                road.setLength(1+ random.nextDouble(200));
-//            } else {
-//                speedLimit = 122+random2.nextInt(128);
-//                road = new Highway(source,destination,speedLimit,random.nextBoolean(),name);
-//                road.setLength(1+random.nextDouble(200));
-//            }
-//            roads[numberOfRoads++] = road;
-//        }
+        for (int i = 0; i < maxRoads; i++) {
+            String name = getRandomName();
+            Location source = locations[random.nextInt(numberOfLocations)];
+            Location destination = locations[random.nextInt(numberOfLocations)];
+            while(source.getName().equals(destination.getName())){
+                //source must be different from the destination
+                destination = locations[random.nextInt(numberOfLocations)];
+                if(!source.getName().equals(destination.getName())){
+                    break;
+                }
+            }
+            int speedLimit = 1;
+            Random random2 = new Random();
+            Road road;
+            if (random.nextBoolean()){
+                speedLimit = 1+ random2.nextInt(89);
+                road = new Country(source,destination,speedLimit,random.nextBoolean(),name);
+                road.setLength(1+random.nextDouble(200));
+            } else if (random.nextBoolean()){
+                speedLimit = 91+random2.nextInt(29);
+                road = new Express(source,destination,speedLimit,random.nextBoolean(),name);
+                road.setLength(1+ random.nextDouble(200));
+            } else {
+                speedLimit = 122+random2.nextInt(128);
+                road = new Highway(source,destination,speedLimit,random.nextBoolean(),name);
+                road.setLength(1+random.nextDouble(200));
+            }
+            roads[numberOfRoads++] = road;
+        }
 
         Problem pb = new Problem(locations, roads, numberOfLocations,numberOfRoads);
         if(pb.isValid(pb))
